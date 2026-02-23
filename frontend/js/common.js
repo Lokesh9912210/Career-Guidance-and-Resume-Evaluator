@@ -1,4 +1,4 @@
-const API_BASE = 'https://career-guidance-and-resume-evaluator.onrender.com/api/login';
+const API_BASE = 'https://career-guidance-and-resume-evaluator.onrender.com';
 
 function requireAuth() {
     if (!localStorage.getItem('token')) window.location.href = 'login.html';
