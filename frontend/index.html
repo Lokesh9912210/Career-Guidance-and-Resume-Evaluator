@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>CareerPath Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo"><div class="logo-icon">⚡</div><span class="logo-text">CareerPath Pro</span></a>
+        <div class="nav-auth" id="navAuth"><a href="login.html" class="btn btn-ghost">Sign In</a><a href="register.html" class="btn btn-primary">Get Started</a></div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 AI-Powered Career Intelligence</div>
+            <h1>Navigate Your<br><span class="gradient-text">Career Journey</span><br>With Confidence</h1>
+            <p>Upload your resume, discover skill gaps, get personalized roadmaps, and find matching jobs.</p>
+            <div class="hero-buttons"><a href="register.html" class="btn btn-primary btn-lg">🎯 Start Free Analysis</a><a href="#features" class="btn btn-ghost btn-lg">Learn More →</a></div>
+            <div class="hero-stats"><div class="stat-item"><div class="stat-number">1000+</div><div class="stat-label">Occupations</div></div><div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Jobs Matched</div></div><div class="stat-item"><div class="stat-number">200+</div><div class="stat-label">Skills Tracked</div></div></div>
+        </div>
+    </section>
+    <section class="features-section" id="features">
+        <div class="section-header"><h2>Everything You Need to <span class="gradient-text">Level Up</span></h2><p>AI analysis with industry-standard data for comprehensive career guidance.</p></div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon">📄</div><h3>Resume Analysis</h3><p>Upload PDF/DOCX/TXT. AI extracts and categorizes all your skills.</p></div>
+            <div class="feature-card"><div class="feature-icon">🗺️</div><h3>Career Roadmap</h3><p>Step-by-step learning roadmap powered by O*NET data.</p></div>
+            <div class="feature-card"><div class="feature-icon">🔄</div><h3>Skill Comparison</h3><p>Compare skills against any occupation's requirements.</p></div>
+            <div class="feature-card"><div class="feature-icon">💼</div><h3>Job Search</h3><p>Find matching jobs from Adzuna based on your skills.</p></div>
+            <div class="feature-card"><div class="feature-icon">📊</div><h3>Resume Scoring</h3><p>Detailed score with improvement suggestions.</p></div>
+            <div class="feature-card"><div class="feature-icon">🤖</div><h3>Telegram Bot</h3><p>Get results via Telegram and email.</p></div>
+        </div>
+    </section>
+    <footer style="text-align:center;padding:40px;border-top:1px solid var(--border-color);color:var(--text-muted);font-size:14px"><p>© 2024 CareerPath Pro</p></footer>
+    <script src="js/common.js"></script>
+    <script>if(localStorage.getItem('token'))document.getElementById('navAuth').innerHTML='<a href="dashboard.html" class="btn btn-primary">Dashboard</a>';</script>
+</body>
+</html>

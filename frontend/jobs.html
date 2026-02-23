@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Jobs - CareerPath Pro</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+    <div class="animated-bg"></div>
+    <nav class="navbar"><a href="dashboard.html" class="nav-logo"><div class="logo-icon">⚡</div><span class="logo-text">CareerPath Pro</span></a></nav>
+    <div class="dashboard-layout">
+        <aside class="sidebar"><div class="sidebar-section-title">Main</div><ul class="sidebar-nav"><li><a href="dashboard.html"><span class="nav-icon">📊</span>Dashboard</a></li><li><a href="upload-resume.html"><span class="nav-icon">📄</span>Upload Resume</a></li></ul><div class="sidebar-section-title">Analysis</div><ul class="sidebar-nav"><li><a href="roadmap.html"><span class="nav-icon">🗺️</span>Roadmap</a></li><li><a href="skill-compare.html"><span class="nav-icon">🔄</span>Skill Compare</a></li><li><a href="jobs.html" class="active"><span class="nav-icon">💼</span>Jobs</a></li><li><a href="resume-score.html"><span class="nav-icon">📊</span>Resume Score</a></li></ul></aside>
+        <main class="main-content">
+            <div class="page-header animate-in"><h1>💼 Jobs & Internships</h1><p>Find opportunities matching your skills</p></div>
+            <div class="card animate-in"><div class="card-header"><h3>🔍 Search</h3><button class="btn btn-sm btn-success" onclick="searchSkillBasedJobs()">⚡ Auto-match</button></div><div class="search-bar"><input type="text" class="form-control" id="jobSearch" placeholder="Job title..."><input type="text" class="form-control" id="jobLocation" placeholder="Location..." style="max-width:200px"><select class="form-control" id="jobCountry" style="max-width:150px"><option value="us">🇺🇸 USA</option><option value="gb">🇬🇧 UK</option><option value="in">🇮🇳 India</option><option value="ca">🇨🇦 Canada</option></select><button class="btn btn-primary" onclick="searchJobs()">Search</button></div></div>
+            <div id="resultsInfo" style="display:none;margin-top:16px"><p style="color:var(--text-secondary)">Found <strong id="jobResultCount">0</strong> results</p></div>
+            <div class="job-grid" id="jobGrid" style="margin-top:24px"><div class="empty-state"><div class="empty-icon">💼</div><h3>Search for jobs</h3><p>Use search or click Auto-match</p></div></div>
+            <div class="pagination" id="pagination" style="display:none"><button onclick="changePage(-1)">← Prev</button><span id="pageInfo" style="padding:8px 16px;color:var(--text-secondary)">Page 1</span><button onclick="changePage(1)">Next →</button></div>
+        </main>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="loading-overlay" id="loadingOverlay" style="display:none"><div class="spinner"></div><p>Searching...</p></div>
+    <script src="js/common.js"></script><script src="js/jobs.js"></script>
+</body>
+</html>

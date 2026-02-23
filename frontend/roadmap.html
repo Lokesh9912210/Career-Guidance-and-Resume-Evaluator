@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Roadmap - CareerPath Pro</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+    <div class="animated-bg"></div>
+    <nav class="navbar"><a href="dashboard.html" class="nav-logo"><div class="logo-icon">⚡</div><span class="logo-text">CareerPath Pro</span></a></nav>
+    <div class="dashboard-layout">
+        <aside class="sidebar"><div class="sidebar-section-title">Main</div><ul class="sidebar-nav"><li><a href="dashboard.html"><span class="nav-icon">📊</span>Dashboard</a></li><li><a href="upload-resume.html"><span class="nav-icon">📄</span>Upload Resume</a></li></ul><div class="sidebar-section-title">Analysis</div><ul class="sidebar-nav"><li><a href="roadmap.html" class="active"><span class="nav-icon">🗺️</span>Roadmap</a></li><li><a href="skill-compare.html"><span class="nav-icon">🔄</span>Skill Compare</a></li><li><a href="jobs.html"><span class="nav-icon">💼</span>Jobs</a></li><li><a href="resume-score.html"><span class="nav-icon">📊</span>Resume Score</a></li></ul></aside>
+        <main class="main-content">
+            <div class="page-header animate-in"><h1>🗺️ Career Roadmap</h1><p>Get a personalized learning roadmap</p></div>
+            <div class="card animate-in"><div class="card-header"><h3>🔍 Search Occupation</h3></div><div class="search-bar"><input type="text" class="form-control" id="occupationSearch" placeholder="e.g., Software Developer..."><button class="btn btn-primary" onclick="searchOccupations()">Search</button></div><div class="occupation-list" id="occupationList"></div></div>
+            <div id="roadmapResults" style="display:none;margin-top:24px">
+                <div class="card-grid card-grid-3"><div class="stat-card"><div class="stat-icon" style="background:rgba(102,126,234,0.15)">🎯</div><div class="stat-info"><h4 id="targetOcc">--</h4><p>Target</p></div></div><div class="stat-card"><div class="stat-icon" style="background:rgba(67,233,123,0.15)">✅</div><div class="stat-info"><h4 id="currentSkillsCount">0</h4><p>Your Skills</p></div></div><div class="stat-card"><div class="stat-icon" style="background:rgba(245,87,108,0.15)">📚</div><div class="stat-info"><h4 id="missingSkillsCount">0</h4><p>To Learn</p></div></div></div>
+                <div class="card" style="margin-top:24px"><div class="card-header"><h3>📚 Missing Skills</h3></div><div class="skills-container" id="missingSkillsList"></div></div>
+                <div class="card" style="margin-top:24px"><div class="card-header"><h3>🛤️ Learning Roadmap</h3></div><div class="roadmap-timeline" id="roadmapTimeline"></div></div>
+            </div>
+        </main>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="loading-overlay" id="loadingOverlay" style="display:none"><div class="spinner"></div><p>Generating...</p></div>
+    <script src="js/common.js"></script><script src="js/roadmap.js"></script>
+</body>
+</html>

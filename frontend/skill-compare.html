@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Skill Compare - CareerPath Pro</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+    <div class="animated-bg"></div>
+    <nav class="navbar"><a href="dashboard.html" class="nav-logo"><div class="logo-icon">⚡</div><span class="logo-text">CareerPath Pro</span></a></nav>
+    <div class="dashboard-layout">
+        <aside class="sidebar"><div class="sidebar-section-title">Main</div><ul class="sidebar-nav"><li><a href="dashboard.html"><span class="nav-icon">📊</span>Dashboard</a></li><li><a href="upload-resume.html"><span class="nav-icon">📄</span>Upload Resume</a></li></ul><div class="sidebar-section-title">Analysis</div><ul class="sidebar-nav"><li><a href="roadmap.html"><span class="nav-icon">🗺️</span>Roadmap</a></li><li><a href="skill-compare.html" class="active"><span class="nav-icon">🔄</span>Skill Compare</a></li><li><a href="jobs.html"><span class="nav-icon">💼</span>Jobs</a></li><li><a href="resume-score.html"><span class="nav-icon">📊</span>Resume Score</a></li></ul></aside>
+        <main class="main-content">
+            <div class="page-header animate-in"><h1>🔄 Skill Comparison</h1><p>Compare your skills with occupation requirements</p></div>
+            <div class="card animate-in"><div class="card-header"><h3>🔍 Select Occupation</h3></div><div class="search-bar"><input type="text" class="form-control" id="occupationSearch" placeholder="Search occupation..."><button class="btn btn-primary" onclick="searchOccupations()">Search</button></div><div class="occupation-list" id="occupationList"></div></div>
+            <div id="comparisonResults" style="display:none;margin-top:24px">
+                <div class="card" style="text-align:center"><h3>Match for <span class="gradient-text" id="compOccName"></span></h3><div class="match-circle" style="margin:24px auto"><span class="match-value" id="matchPercent">0%</span><span class="match-label">Match</span></div><div style="max-width:400px;margin:0 auto"><div class="progress-bar"><div class="progress-fill" id="matchBar" style="width:0%"></div></div></div></div>
+                <div class="card-grid card-grid-3" style="margin-top:24px">
+                    <div class="card"><div class="card-header"><h3>✅ Matched</h3><span class="format-badge" id="matchedCount">0</span></div><div class="skills-container" id="matchedSkills"></div></div>
+                    <div class="card"><div class="card-header"><h3>❌ Missing</h3><span class="format-badge" id="missingCount">0</span></div><div class="skills-container" id="missingSkills"></div></div>
+                    <div class="card"><div class="card-header"><h3>➕ Extra</h3><span class="format-badge" id="extraCount">0</span></div><div class="skills-container" id="extraSkills"></div></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="loading-overlay" id="loadingOverlay" style="display:none"><div class="spinner"></div><p>Comparing...</p></div>
+    <script src="js/common.js"></script><script src="js/skills.js"></script>
+</body>
+</html>

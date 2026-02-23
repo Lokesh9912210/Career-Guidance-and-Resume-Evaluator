@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Upload Resume - CareerPath Pro</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+    <div class="animated-bg"></div>
+    <nav class="navbar"><a href="dashboard.html" class="nav-logo"><div class="logo-icon">⚡</div><span class="logo-text">CareerPath Pro</span></a></nav>
+    <div class="dashboard-layout">
+        <aside class="sidebar"><div class="sidebar-section-title">Main</div><ul class="sidebar-nav"><li><a href="dashboard.html"><span class="nav-icon">📊</span>Dashboard</a></li><li><a href="upload-resume.html" class="active"><span class="nav-icon">📄</span>Upload Resume</a></li></ul><div class="sidebar-section-title">Analysis</div><ul class="sidebar-nav"><li><a href="roadmap.html"><span class="nav-icon">🗺️</span>Roadmap</a></li><li><a href="skill-compare.html"><span class="nav-icon">🔄</span>Skill Compare</a></li><li><a href="jobs.html"><span class="nav-icon">💼</span>Jobs</a></li><li><a href="resume-score.html"><span class="nav-icon">📊</span>Resume Score</a></li></ul></aside>
+        <main class="main-content">
+            <div class="page-header animate-in"><h1>📄 Upload Resume</h1><p>AI extracts your skills automatically</p></div>
+            <div class="card animate-in"><div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()"><span class="upload-icon">📁</span><h3>Drag & Drop resume here</h3><p>or click to browse</p><div class="supported-formats"><span class="format-badge">PDF</span><span class="format-badge">DOCX</span><span class="format-badge">TXT</span></div><input type="file" id="fileInput" accept=".pdf,.docx,.txt"></div></div>
+            <div class="card" id="fileInfo" style="display:none;margin-top:24px"><div class="card-header"><h3>📋 Selected File</h3><button class="btn btn-primary" id="uploadBtn" onclick="uploadResume()">🚀 Upload & Analyze</button></div><p id="selectedFileName"></p><p id="selectedFileSize" style="color:var(--text-muted);font-size:14px"></p></div>
+            <div id="results" style="display:none;margin-top:24px">
+                <div class="card-grid card-grid-2"><div class="card"><div class="card-header"><h3>🧠 Skills</h3><span class="format-badge" id="skillCountBadge">0</span></div><div class="skills-container" id="extractedSkills"></div></div><div class="card"><div class="card-header"><h3>📝 Text Preview</h3></div><div id="extractedText" style="max-height:300px;overflow-y:auto;font-size:14px;color:var(--text-secondary)"></div></div></div>
+                <div style="display:flex;gap:16px;margin-top:24px;flex-wrap:wrap"><a href="roadmap.html" class="btn btn-primary btn-lg">🗺️ Roadmap</a><a href="skill-compare.html" class="btn btn-outline btn-lg">🔄 Compare</a><a href="jobs.html" class="btn btn-outline btn-lg">💼 Jobs</a><a href="resume-score.html" class="btn btn-secondary btn-lg">📊 Score</a></div>
+            </div>
+        </main>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="loading-overlay" id="loadingOverlay" style="display:none"><div class="spinner"></div><p>Analyzing...</p></div>
+    <script src="js/common.js"></script><script src="js/resume.js"></script>
+</body>
+</html>

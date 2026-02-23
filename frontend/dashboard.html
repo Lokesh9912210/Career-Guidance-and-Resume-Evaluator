@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard - CareerPath Pro</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+    <div class="animated-bg"></div>
+    <nav class="navbar"><a href="dashboard.html" class="nav-logo"><div class="logo-icon">⚡</div><span class="logo-text">CareerPath Pro</span></a><div class="nav-auth"><span id="userName" style="color:var(--text-secondary);font-size:14px"></span><div class="user-avatar" onclick="window.location='dashboard.html'">U</div></div></nav>
+    <div class="dashboard-layout">
+        <aside class="sidebar"><div class="sidebar-section-title">Main</div><ul class="sidebar-nav"><li><a href="dashboard.html" class="active"><span class="nav-icon">📊</span>Dashboard</a></li><li><a href="upload-resume.html"><span class="nav-icon">📄</span>Upload Resume</a></li></ul><div class="sidebar-section-title">Analysis</div><ul class="sidebar-nav"><li><a href="roadmap.html"><span class="nav-icon">🗺️</span>Roadmap</a></li><li><a href="skill-compare.html"><span class="nav-icon">🔄</span>Skill Compare</a></li><li><a href="jobs.html"><span class="nav-icon">💼</span>Jobs</a></li><li><a href="resume-score.html"><span class="nav-icon">📊</span>Resume Score</a></li></ul><div class="sidebar-section-title">Account</div><ul class="sidebar-nav"><li><a href="#" onclick="logout()"><span class="nav-icon">🚪</span>Sign Out</a></li></ul></aside>
+        <main class="main-content">
+            <div class="page-header animate-in"><h1>Welcome, <span class="gradient-text" id="dashboardName">User</span>! 👋</h1><p>Your career analysis overview</p></div>
+            <div class="card-grid card-grid-4 animate-in" style="margin-bottom:24px">
+                <div class="stat-card"><div class="stat-icon" style="background:rgba(102,126,234,0.15)">📄</div><div class="stat-info"><h4 id="resumeCount">0</h4><p>Resumes</p></div></div>
+                <div class="stat-card"><div class="stat-icon" style="background:rgba(67,233,123,0.15)">💡</div><div class="stat-info"><h4 id="skillCount">0</h4><p>Skills</p></div></div>
+                <div class="stat-card"><div class="stat-icon" style="background:rgba(240,147,251,0.15)">📊</div><div class="stat-info"><h4 id="resumeScore">--</h4><p>Score</p></div></div>
+                <div class="stat-card"><div class="stat-icon" style="background:rgba(79,172,254,0.15)">💼</div><div class="stat-info"><h4 id="jobCount">0</h4><p>Jobs</p></div></div>
+            </div>
+            <div class="card-grid card-grid-2">
+                <div class="card"><div class="card-header"><h3>🧠 Your Skills</h3></div><div class="skills-container" id="userSkills"><p style="color:var(--text-muted)">Upload a resume to see skills</p></div></div>
+                <div class="card"><div class="card-header"><h3>⚡ Quick Actions</h3></div><div style="display:grid;gap:12px"><a href="upload-resume.html" class="btn btn-primary" style="width:100%">📄 Upload Resume</a><a href="roadmap.html" class="btn btn-outline" style="width:100%">🗺️ Roadmap</a><a href="skill-compare.html" class="btn btn-outline" style="width:100%">🔄 Compare Skills</a><a href="jobs.html" class="btn btn-outline" style="width:100%">💼 Find Jobs</a><a href="resume-score.html" class="btn btn-outline" style="width:100%">📊 Score Resume</a></div></div>
+            </div>
+        </main>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="js/common.js"></script>
+    <script>
+        requireAuth();
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = JSON.parse(localStorage.getItem('user')||'{}');
+            document.getElementById('dashboardName').textContent = user.fullName||'User';
+            document.getElementById('userName').textContent = user.fullName||'';
+            try { const r = await apiCall('/api/skills/my-skills'); if(r.success&&r.skills.length){document.getElementById('skillCount').textContent=r.skills.length;document.getElementById('userSkills').innerHTML=r.skills.map(s=>'<span class="skill-tag user">'+s+'</span>').join('');} } catch(e){}
+            try { const r = await apiCall('/api/resume/all'); if(r.success) document.getElementById('resumeCount').textContent=r.resumes.length; } catch(e){}
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Resume Score - CareerPath Pro</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+    <div class="animated-bg"></div>
+    <nav class="navbar"><a href="dashboard.html" class="nav-logo"><div class="logo-icon">⚡</div><span class="logo-text">CareerPath Pro</span></a></nav>
+    <div class="dashboard-layout">
+        <aside class="sidebar"><div class="sidebar-section-title">Main</div><ul class="sidebar-nav"><li><a href="dashboard.html"><span class="nav-icon">📊</span>Dashboard</a></li><li><a href="upload-resume.html"><span class="nav-icon">📄</span>Upload Resume</a></li></ul><div class="sidebar-section-title">Analysis</div><ul class="sidebar-nav"><li><a href="roadmap.html"><span class="nav-icon">🗺️</span>Roadmap</a></li><li><a href="skill-compare.html"><span class="nav-icon">🔄</span>Skill Compare</a></li><li><a href="jobs.html"><span class="nav-icon">💼</span>Jobs</a></li><li><a href="resume-score.html" class="active"><span class="nav-icon">📊</span>Resume Score</a></li></ul></aside>
+        <main class="main-content">
+            <div class="page-header animate-in"><h1>📊 Resume Score</h1><p>Detailed analysis of your resume</p></div>
+            <div style="text-align:center;margin-bottom:32px"><button class="btn btn-primary btn-lg" onclick="getScore()" id="scoreBtn">🔍 Analyze My Resume</button></div>
+            <div id="scoreResults" style="display:none">
+                <div class="card" style="text-align:center"><h3>Overall Score</h3><p id="scoreSummary" style="color:var(--text-secondary)"></p><div class="score-display"><div class="score-circle-lg"><span class="score-value" id="overallScore">0</span><span class="score-label">out of 100</span></div></div></div>
+                <div class="card" style="margin-top:24px"><div class="card-header"><h3>📋 Breakdown</h3></div><div class="score-categories" id="categoryBreakdown"></div></div>
+                <div class="card-grid card-grid-2" style="margin-top:24px">
+                    <div class="card"><div class="card-header"><h3>💪 Strengths</h3></div><ul class="feedback-list strengths" id="strengthsList"></ul></div>
+                    <div class="card"><div class="card-header"><h3>🔧 Improve</h3></div><ul class="feedback-list improvements" id="improvementsList"></ul></div>
+                </div>
+                <div style="text-align:center;margin-top:32px"><button onclick="sendToEmail()" class="btn btn-primary btn-lg">📧 Send to Email</button> <a href="upload-resume.html" class="btn btn-outline btn-lg">📄 New Resume</a></div>
+            </div>
+            <div id="noResumeState" style="display:none"><div class="empty-state"><div class="empty-icon">📄</div><h3>No Resume</h3><p>Upload first</p><a href="upload-resume.html" class="btn btn-primary btn-lg">Upload</a></div></div>
+        </main>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="loading-overlay" id="loadingOverlay" style="display:none"><div class="spinner"></div><p>Analyzing...</p></div>
+    <script src="js/common.js"></script><script src="js/score.js"></script>
+</body>
+</html>
