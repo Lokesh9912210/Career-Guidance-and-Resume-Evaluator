@@ -1,4 +1,4 @@
-const API_BASE = 'https://career-guidance-and-resume-evaluator.onrender.com';
+const API_BASE = 'career-guidance-and-resume-evaluator-production.up.railway.app';
 
 function requireAuth() {
     if (!localStorage.getItem('token')) window.location.href = 'login.html';
