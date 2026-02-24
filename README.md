@@ -1,7 +1,4 @@
 Career Guidance & Resume Evaluator
-Live Demo:
-https://career-guidance-and-resume-evaluator-p8qs5zb9e.vercel.app/
-Developed by: Lokesh Mendudala
 Project Overview
 Career Guidance & Resume Evaluator is a full-stack web application that analyzes user resumes and provides personalized career recommendations, skill gap analysis, and job suggestions.
 The platform securely authenticates users, extracts skills from uploaded resumes, and integrates external APIs to generate real-time career insights.
@@ -29,4 +26,5 @@ External APIs Integrated
 O*NET API – Used for career role data and skill mapping
 Adzuna API – Used for real-time job listings based on skills
 Note: API keys are securely stored in backend environment variables and are not exposed in frontend code.﻿# Career-Guidance-and-Resume-Evaluator
+
 
