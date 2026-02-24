@@ -9,8 +9,8 @@
     --bg-dark: rgb(235, 240, 243);
     --bg-card: rgba(255, 255, 255, 0.05);
     --bg-card-hover: rgba(255, 255, 255, 0.08);
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0b8;
+    --text-primary: BLACK;
+    --text-secondary: #BLACK;
     --text-muted: #6c6c80;
     --border-color: rgba(255, 255, 255, 0.1);
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
