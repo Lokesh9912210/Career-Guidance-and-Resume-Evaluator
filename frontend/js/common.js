@@ -1,4 +1,4 @@
-const API_BASE =  'https://career-guidance-and-resume-evalu.railway.internal';
+const API_BASE =  'https://career-guidance-and-resume-evaluator-production-2d2f.up.railway.app';
 
 function requireAuth() {
     if (!localStorage.getItem('token')) window.location.href = 'login.html';
