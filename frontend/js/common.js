@@ -2,10 +2,9 @@
 // MAINTENANCE MODE (TEMPORARY)
 // ======================================
 // Set this to false until Google review is approved
-const API_ENABLED = false;
+const API_ENABLED = true;
+const API_BASE = "https://career-guidance-and-resume-evaluator-n3az.onrender.com/";
 
-// Dummy API base (DO NOT use real backend now)
-const API_BASE = "https://example.com";
 
 // ======================================
 // AUTH GUARD
