@@ -21,12 +21,6 @@ public class OnetService {
     @Value("${onet.api.base-url}")
     private String onetBaseUrl;
 
-    @Value("${onet.api.username}")
-    private String onetUsername;
-
-    @Value("${onet.api.password}")
-    private String onetPassword;
-
     private final SkillExtractorService skillExtractorService;
 
     public List<Map<String, String>> searchOccupations(String keyword) {
