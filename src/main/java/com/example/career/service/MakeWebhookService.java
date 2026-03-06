@@ -14,11 +14,11 @@ import java.util.List;
 @Slf4j
 public class MakeWebhookService {
 
-    @Value("${make.webhook.url}")
-    private String makeWebhookUrl;
+@Value("${MAKE_WEBHOOK_URL:https://dummy-webhook-url.com/results}")
+private String makeWebhookUrl;
 
-    @Value("${make.webhook.resume-url}")
-    private String makeResumeWebhookUrl;
+@Value("${MAKE_WEBHOOK_RESUME_URL:https://dummy-webhook-url.com/resume}")
+private String makeResumeWebhookUrl;
 
     public void sendResumeToMake(User user, Resume resume, List<String> skills) {
         try {
