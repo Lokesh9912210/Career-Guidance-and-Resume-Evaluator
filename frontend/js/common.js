@@ -3,7 +3,7 @@
 // ======================================
 // Set this to false until Google review is approved
 const API_ENABLED = true;
-const API_BASE = "https://career-guidance-and-resume-evaluator-n3az.onrender.com/";
+const API_BASE = "https://career-guidance-and-resume-evaluator-n3az.onrender.com";
 
 
 // ======================================
