@@ -33,7 +33,7 @@ body {
 }
 
 
-body::before{
+body.auth-bg::before{
     content: "";
     position: fixed;
     top: 0;
